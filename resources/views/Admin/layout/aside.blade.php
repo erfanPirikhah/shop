@@ -67,9 +67,37 @@
                 <li class="nav-item">
                   <a href={{route("cat.create")}} class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>افزودن دسته ها </p>
+                    <p>افزودن برند ها </p>
                   </a>
                 </li>
+               
+             
+              </ul>
+            </li>
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                 اسلاید
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href={{route("slider.create")}} class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>افزودن اسلاید </p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href={{route("slider.index")}} class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>ها اسلاید </p>
+                  </a>
+                </li>
+               
                
              
               </ul>

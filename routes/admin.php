@@ -25,6 +25,7 @@ Route::group(['namespace'=>'Admin','prefix' => 'admin','middleware'=>'auth'], fu
     Route::resource('cat', 'CatsController');
     Route::resource('product', 'ProductController');
     Route::resource('color', 'ColorController');
+    Route::resource('slider', 'SliderController');
  
 
 

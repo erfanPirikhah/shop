@@ -29,6 +29,11 @@ class CreateProductsTable extends Migration
             $table->string('screanSize');
             $table->string('simNumber');
             $table->string('imageUrl');
+            $table->integer('price');
+            $table->integer('count')->unsigned();
+            $table->integer('discount');
+            $table->enum('status',['0','1']);
+            $table->integer('best');
             $table->text('body');
             $table->timestamps();
         });

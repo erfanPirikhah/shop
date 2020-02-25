@@ -65,10 +65,9 @@
             <div class="form-group col-4">
               <label>برند</label>
               <select class="form-control">
-                <option> اپل</option>
-                <option> سامسونگ</option>
-                <option> هواووی</option>
-                <option>ال جی </option>
+                @foreach ($cats as $item)
+              <option value={{$item->id}}>{{$item->title_fa}}--{{$item->title_en}}</option>
+                @endforeach
                 
               </select>
             </div>
@@ -209,6 +208,43 @@
             </div>
 
 
+            <div class="form-group col-4">
+              <label>تعداد محصول</label>
+              <input type="number" name="count" class="form-control" placeholder="تعداد محصول ">
+            </div>
+
+            <div class="form-group col-4">
+              <label>درصد تخفیف</label>
+              <input type="number" name="count" class="form-control" placeholder="درصد تخفیف ">
+            </div>
+
+            <div class="form-group col-8">
+              <label>قیمت محصول </label>
+              <input type="number" name="count" class="form-control" placeholder="تعداد محصول ">
+            </div><br>
+
+            &nbsp &nbsp <label>وضعیت موجودی</label><br>&nbsp &nbsp &nbsp <br>
+            
+            <div class="form-check">
+            
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+              نا موجود
+              </label>
+            </div>
+
+     
+
+            &nbsp &nbsp <label>پیشنهاد ویژه</label><br>&nbsp &nbsp &nbsp
+            
+            <div class="form-check">
+            
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                پیشنهاد ویژه
+              </label>
+            </div>
+
 
 
             <div class="form-group col-12">
@@ -232,5 +268,9 @@
 
   
   </div>
+
+  
+
+  
     
 @endsection

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Cat;
-use App\Color;
-use App\Http\Controllers\Controller;
-use App\Product;
+use App\Slider;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ProductController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
+    {   $n=1;
+        $sliders=Slider::latest()->paginate(15);
+        return view('Admin.slider.index',compact('sliders','n'));
     }
 
     /**
@@ -27,9 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $colors=Color::all();
-        $cats=Cat::all();
-        return view('Admin.products.create',compact('colors','cats'));
+        return view('Admin.slider.create');
     }
 
     /**
@@ -40,16 +37,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Slider::create([
+            'title'=>request('title'),
+            'url'=>request('url'),
+            'imageUrl'=>request('filepath')
+        ]);
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Slider $slider)
     {
         //
     }
@@ -57,10 +59,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Slider $slider)
     {
         //
     }
@@ -69,10 +71,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Slider $slider)
     {
         //
     }
@@ -80,11 +82,12 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+        return back();
     }
 }
