@@ -17,7 +17,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        $n=1;
+        $products=Product::latest()->paginate(20);
+        return view('Admin.products.index',compact('n','products'));
     }
 
     /**
@@ -112,6 +114,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return back();
     }
 }
