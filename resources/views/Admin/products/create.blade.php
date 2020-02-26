@@ -194,6 +194,25 @@
               </select>
             </div>
 
+            <div class="form-group col-4">
+              <label>کد محصول </label>
+              <input type="number" name="code" class="form-control" placeholder="تعداد محصول ">
+            </div><br>
+       
+
+
+            <div class="form-group col-4">
+              <label>تعداد محصول</label>
+              <input type="number" name="count" class="form-control" placeholder="تعداد محصول ">
+            </div>
+
+            <div class="form-group col-4">
+              <label>درصد تخفیف</label>
+              <input type="number" name="discount" class="form-control" placeholder="درصد تخفیف ">
+            </div>
+
+        
+
 
             <div class="form-group col-4">
               <label>آپلود تصاویر </label>
@@ -207,23 +226,6 @@
               </div>
               <img id="holder" style="margin-top:15px;max-height:100px;">
             </div>
-
-
-            <div class="form-group col-4">
-              <label>تعداد محصول</label>
-              <input type="number" name="count" class="form-control" placeholder="تعداد محصول ">
-            </div>
-
-            <div class="form-group col-4">
-              <label>درصد تخفیف</label>
-              <input type="number" name="discount" class="form-control" placeholder="درصد تخفیف ">
-            </div>
-
-            <div class="form-group col-4">
-              <label>کد محصول </label>
-              <input type="number" name="code" class="form-control" placeholder="تعداد محصول ">
-            </div><br>
-
             <div class="form-group col-4">
               <label>قیمت محصول </label>
               <input type="number" name="price" class="form-control" placeholder="تعداد محصول ">

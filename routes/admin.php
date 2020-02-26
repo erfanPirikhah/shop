@@ -21,9 +21,9 @@ Route::group(['namespace'=>'Admin','prefix' => 'admin'], function () {
     Route::get('/panel', function () {
         return view('Admin.layout.master');
     });
-
-    Route::resource('cat', 'CatsController');
     Route::resource('product', 'ProductController');
+    Route::resource('cat', 'CatsController');
+
     Route::resource('color', 'ColorController');
     Route::resource('slider', 'SliderController');
 });

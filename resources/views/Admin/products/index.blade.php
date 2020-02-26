@@ -27,6 +27,7 @@
               <th>نامحصول</th>
               <th>تاریخ</th>
               <th>وضعیت</th>
+              <th>ویژه</th>
               <th>قیمت</th>
               <th>تعداد</th>
               <th>تنظیمات</th>
@@ -37,16 +38,20 @@
                 <td><img src="{{$item->imageUrl}}" alt="{{$item->name_en}}" style="width:100px;height:90px"></td>
                 <td>{{$item->name_en}}</td>
                 <td>{{$item->created_at}}</td>
-                <td><span class="{{$item->status == '' ? 'badge badge-warning' : 'badge badge-success'}}">{{$item->status == '' ? 'ناموجود' : 'موجود'}}</span></td>
+                <td><span class="{{$item->status == '' ? 'badge  badge-pill badge-success' : 'badge badge-pill badge-warning'}}">{{$item->status == '' ? 'موجود' : 'ناموجود'}}</span></td>
+                <td><span class="{{$item->best == '' ? 'badge badge-success' : 'badge badge-danger'}}">{{$item->best == '' ? 'ویژه' : 'عادی'}}</span></td>
                 <td>{{number_format($item->price)}}</td>
                 <td>{{$item->count}}</td>
               
-                <td>  <form action="{{Route('slider.destroy',["id"=>$item->id])}}"  method="post">
+                <td>  <form action="{{Route('product.destroy',["id"=>$item->id])}}"  method="post">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <div class="btn btn-group btn-xs">
+                     <a href="{{Route('product.edit',["id"=>$item->id])}}" class="btn btn-primary btn-sm">ویرایش</a>
                       <button type="submit" class="btn btn-danger btn-sm" > حذف</button>
                     </div>
+
+                    
                       </form></td>
             </tr>
            @endforeach

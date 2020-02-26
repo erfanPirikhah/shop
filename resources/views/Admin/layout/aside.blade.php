@@ -39,7 +39,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index2.html" class="nav-link">
+                  <a href="{{route("product.index")}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>لیست محصولات </p>
                   </a>

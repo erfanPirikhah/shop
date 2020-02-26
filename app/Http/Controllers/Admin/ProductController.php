@@ -7,6 +7,7 @@ use App\Color;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -43,6 +44,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {   
         
+        $status=Input::has('status') ? true :false;
+        $best=Input::has('best') ? true :false;
         Product::create([
            'user_id'=>'1',
            'catgory_id'=>request("brand"),
@@ -61,9 +64,9 @@ class ProductController extends Controller
            'price'=>request("price"),
            'count'=>request("count"),
            'discount'=>request("discount"),
-           'status'=>request("status"),
+           'status'=> $status,
            'code'=>request("code"),
-            'best'=>request("best"),
+            'best'=>  $best,
             'body'=>request("body")
 
 
@@ -91,7 +94,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $cats=Cat::all();
+        $colors=Color::all();
+        return view('Admin.products.edit',compact('product','colors','cats'));
     }
 
     /**
@@ -103,7 +108,42 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+
+        $url= request('filepath');
+        if ($url=="") {
+            $url= $url= $product->imageUrl;
+        } else {
+            $url=request('filepath');
+        }
+
+        $status=Input::has('status') ? true :false;
+        $best=Input::has('best') ? true :false;
+       $product->update([
+           'user_id'=>'1',
+           'catgory_id'=>request("brand"),
+           'name_fa'=>request("name_fa"),
+           'name_en'=>request("name_en"),
+           'color_id'=>request("color"),
+           'internalMemory'=>request("internalMemory"),
+           'network'=>request("network"),
+           'ram'=>request("ram"),
+           'front_camera'=>request("front_camera"),
+           'back_camera'=>request("back_camera"),
+           'replace_battry'=>request("replace_battry"),
+           'screanSize'=>request("screanSize"),
+           'simNumber'=>request("simNumber"),
+           'imageUrl'=>$url,
+           'price'=>request("price"),
+           'count'=>request("count"),
+           'discount'=>request("discount"),
+           'status'=> $status,
+           'code'=>request("code"),
+            'best'=>  $best,
+            'body'=>request("body")
+
+            
+        ]);
+        return back();
     }
 
     /**

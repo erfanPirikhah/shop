@@ -32,9 +32,9 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('count')->unsigned();
             $table->integer('discount')->default(0)->nullable();
-            $table->enum('status', ['0','1'])->default(0)->nullable();
+            $table->boolean('status')->default(0);
             $table->integer('code');
-            $table->enum('best', ['0','1'])->default(0)->nullable();
+            $table->boolean('best')->default(0);
             $table->text('body');
             $table->timestamps();
         });
