@@ -39,8 +39,35 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        
+        Product::create([
+           'user_id'=>'1',
+           'catgory_id'=>request("brand"),
+           'name_fa'=>request("name_fa"),
+           'name_en'=>request("name_en"),
+           'color_id'=>request("color"),
+           'internalMemory'=>request("internalMemory"),
+           'network'=>request("network"),
+           'ram'=>request("ram"),
+           'front_camera'=>request("front_camera"),
+           'back_camera'=>request("back_camera"),
+           'replace_battry'=>request("replace_battry"),
+           'screanSize'=>request("screanSize"),
+           'simNumber'=>request("simNumber"),
+           'imageUrl'=>request("filepath"),
+           'price'=>request("price"),
+           'count'=>request("count"),
+           'discount'=>request("discount"),
+           'status'=>request("status"),
+           'code'=>request("code"),
+            'best'=>request("best"),
+            'body'=>request("body")
+
+
+
+        ]);
+            return back();
     }
 
     /**

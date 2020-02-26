@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('catgory_id');
             $table->string('name_fa');
             $table->string('name_en');
-            $table->string('color');
+            $table->string('color_id');
             $table->integer('internalMemory');
             $table->string('network');
             $table->integer('ram');
@@ -31,9 +31,10 @@ class CreateProductsTable extends Migration
             $table->string('imageUrl');
             $table->integer('price');
             $table->integer('count')->unsigned();
-            $table->integer('discount');
-            $table->enum('status',['0','1']);
-            $table->integer('best');
+            $table->integer('discount')->default(0)->nullable();
+            $table->enum('status', ['0','1'])->default(0)->nullable();
+            $table->integer('code');
+            $table->enum('best', ['0','1'])->default(0)->nullable();
             $table->text('body');
             $table->timestamps();
         });

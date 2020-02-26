@@ -17,7 +17,7 @@ Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\Lfm
 
 
 
-Route::group(['namespace'=>'Admin','prefix' => 'admin','middleware'=>'auth'], function () {
+Route::group(['namespace'=>'Admin','prefix' => 'admin'], function () {
     Route::get('/panel', function () {
         return view('Admin.layout.master');
     });
@@ -26,9 +26,6 @@ Route::group(['namespace'=>'Admin','prefix' => 'admin','middleware'=>'auth'], fu
     Route::resource('product', 'ProductController');
     Route::resource('color', 'ColorController');
     Route::resource('slider', 'SliderController');
- 
-
-
 });
 
 
