@@ -23,9 +23,9 @@ Route::group(['namespace'=>'Admin','prefix' => 'admin'], function () {
     });
     Route::resource('product', 'ProductController');
     Route::resource('cat', 'CatsController');
-
     Route::resource('color', 'ColorController');
     Route::resource('slider', 'SliderController');
+    Route::resource('user', 'UserController');
 });
 
 

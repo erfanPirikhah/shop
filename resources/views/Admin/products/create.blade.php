@@ -226,6 +226,8 @@
               </div>
               <img id="holder" style="margin-top:15px;max-height:100px;">
             </div>
+
+            
             <div class="form-group col-4">
               <label>قیمت محصول </label>
               <input type="number" name="price" class="form-control" placeholder="تعداد محصول ">
@@ -268,6 +270,8 @@
       </div>
             <div >
               <button type="submit" class="btn btn-primary">ارسال</button>
+
+               
             </div>
          </form>
       </div>

@@ -37,7 +37,7 @@
                 <td>{{$n++}}</td>
                 <td><img src="{{$item->imageUrl}}" alt="{{$item->name_en}}" style="width:100px;height:90px"></td>
                 <td>{{$item->name_en}}</td>
-                <td>{{$item->created_at}}</td>
+                <td>{{jdate($item->created_at)->format('%d/ %m/ %Y')}}</td>
                 <td><span class="{{$item->status == '' ? 'badge  badge-pill badge-success' : 'badge badge-pill badge-warning'}}">{{$item->status == '' ? 'موجود' : 'ناموجود'}}</span></td>
                 <td><span class="{{$item->best == '' ? 'badge badge-success' : 'badge badge-danger'}}">{{$item->best == '' ? 'ویژه' : 'عادی'}}</span></td>
                 <td>{{number_format($item->price)}}</td>

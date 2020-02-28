@@ -222,7 +222,7 @@
                 </span>
                 <input id="thumbnail" class="form-control" type="text" name="filepath" value="{{$product->imageUrl}}">
               </div>
-              <img id="holder" style="margin-top:15px;max-height:100px;">
+              <img src="{{$product->imageUrl}}" id="holder" style="margin-top:15px;max-height:100px;">
             </div>
 
             <div class="form-group col-4">

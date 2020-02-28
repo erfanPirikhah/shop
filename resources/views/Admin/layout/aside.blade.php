@@ -11,10 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&amp;d=mm&amp;r=g" class="img-circle elevation-2" alt="User Image">
+            <img src="{{auth()->user()->image}}" alt="{{auth()->user()->name}}">
           </div>
           <div class="info">
-            <a href="#" class="d-block">حسام موسوی</a>
+            <a href="#" class="d-block">{{auth()->user()->name}}</a>
           </div>
         </div>
 
@@ -101,6 +101,17 @@
                
              
               </ul>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="../widgets.html" class="nav-link">
+                <i class="nav-icon fa fa-th"></i>
+                <p>
+                 کاربران
+                  
+                </p>
+              </a>
             </li>
 
             <li class="nav-item">
