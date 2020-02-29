@@ -41,7 +41,7 @@
             </div>
             <img id="holder" style="margin-top:15px;max-height:100px;">
           </div>
-   
+          
       </div>
       <!-- /.card-body -->
 
@@ -50,4 +50,6 @@
       </div>
     </form>
   </div>
+
+ 
 @endsection

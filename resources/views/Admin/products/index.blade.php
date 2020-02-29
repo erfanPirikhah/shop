@@ -39,7 +39,7 @@
                 <td>{{$item->name_en}}</td>
                 <td>{{jdate($item->created_at)->format('%d/ %m/ %Y')}}</td>
                 <td><span class="{{$item->status == '' ? 'badge  badge-pill badge-success' : 'badge badge-pill badge-warning'}}">{{$item->status == '' ? 'موجود' : 'ناموجود'}}</span></td>
-                <td><span class="{{$item->best == '' ? 'badge badge-success' : 'badge badge-danger'}}">{{$item->best == '' ? 'ویژه' : 'عادی'}}</span></td>
+                <td><span class="{{$item->best == '1' ? 'badge badge-success' : 'badge badge-danger'}}">{{$item->best == '1' ? 'ویژه' : 'عادی'}}</span></td>
                 <td>{{number_format($item->price)}}</td>
                 <td>{{$item->count}}</td>
               

@@ -73,7 +73,7 @@ class ProductController extends Controller
 
         ]);
         alert()->success('پیام', 'با موفقیت افزوده شد')->persistent("بستن ");
-            return back('admin/product');
+            return redirect('admin/product');
     }
 
     /**
@@ -145,7 +145,7 @@ class ProductController extends Controller
             
         ]);
         alert()->success('پیام', 'با موفقیت آپدیت  شد')->persistent("بستن ");
-        return back('admin/product');
+        return redirect('admin/product');
     }
 
     /**
