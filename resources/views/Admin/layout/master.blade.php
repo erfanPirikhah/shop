@@ -28,11 +28,15 @@
     <link rel="stylesheet" href="/admin/dist/css/bootstrap-rtl.min.css">
     <!-- template rtl version -->
     <link rel="stylesheet" href="/admin/dist/css/custom-style.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
   
   <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
- 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <body class="sidebar-mini" style="height: auto;">
+
+    @include('sweet::alert')
     <!-- Site wrapper -->
     <div class="wrapper">
       <!-- Navbar -->
@@ -44,7 +48,8 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper" style="min-height: 675px;">
 
-    
+      
+
         <!-- Main content -->
         <section class="content">
             @yield('content')
@@ -54,6 +59,36 @@
 
 
     </div>
+
+
+    <!-- ./alart ------------------- -->
+    <script>
+      function archiveFunction() {
+          event.preventDefault(); // prevent form submit
+          var form = event.target.form; // storing the form
+                  swal({
+            title: "آیا مطعمن هستید ؟",
+            //  text: "But you will still be able to retrieve this file.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "بله!",
+            cancelButtonText: "خیر",
+            closeOnConfirm: false,
+            closeOnCancel: false
+          },
+          function(isConfirm){
+            if (isConfirm) {
+              form.submit();          // submitting the form when user press yes
+            } else {
+              swal("عملیات موفقیت آمیز نبود ");
+            }
+          });
+       }
+    </script>
+
+      <!-- ./ end alart ------------------- -->
+
     <!-- ./wrapper -->
     
     <!-- jQuery -->
@@ -68,11 +103,13 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
     
-    
+
     </body>
   <!-- ./wrapper -->
-  
+
   <!-- jQuery -->
   <script src="/admin/plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
@@ -111,5 +148,6 @@
   <!-- AdminLTE for demo purposes -->
   <script src="/admin/dist/js/demo.js"></script>
   @yield('script')
+
   
   <div class="daterangepicker dropdown-menu opensright"><div class="calendar first right"><div class="calendar-date"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-arrow-left icon icon-arrow-left glyphicon glyphicon-arrow-left"></i></th><th colspan="5" class="month">Feb 2020</th><th class="next available"><i class="fa fa-arrow-right icon icon-arrow-right glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="available off in-range" data-title="r0c0">26</td><td class="available off in-range" data-title="r0c1">27</td><td class="available off in-range" data-title="r0c2">28</td><td class="available off in-range" data-title="r0c3">29</td><td class="available off in-range" data-title="r0c4">30</td><td class="available off in-range" data-title="r0c5">31</td><td class="available in-range" data-title="r0c6">1</td></tr><tr><td class="available in-range" data-title="r1c0">2</td><td class="available in-range" data-title="r1c1">3</td><td class="available in-range" data-title="r1c2">4</td><td class="available in-range" data-title="r1c3">5</td><td class="available in-range" data-title="r1c4">6</td><td class="available in-range" data-title="r1c5">7</td><td class="available in-range" data-title="r1c6">8</td></tr><tr><td class="available in-range" data-title="r2c0">9</td><td class="available in-range" data-title="r2c1">10</td><td class="available in-range" data-title="r2c2">11</td><td class="available in-range" data-title="r2c3">12</td><td class="available in-range" data-title="r2c4">13</td><td class="available in-range" data-title="r2c5">14</td><td class="available in-range" data-title="r2c6">15</td></tr><tr><td class="available in-range" data-title="r3c0">16</td><td class="available in-range" data-title="r3c1">17</td><td class="available in-range" data-title="r3c2">18</td><td class="available in-range" data-title="r3c3">19</td><td class="available in-range" data-title="r3c4">20</td><td class="available in-range" data-title="r3c5">21</td><td class="available in-range" data-title="r3c6">22</td></tr><tr><td class="available active end-date" data-title="r4c0">23</td><td class="available" data-title="r4c1">24</td><td class="available" data-title="r4c2">25</td><td class="available" data-title="r4c3">26</td><td class="available" data-title="r4c4">27</td><td class="available" data-title="r4c5">28</td><td class="available" data-title="r4c6">29</td></tr><tr><td class="available off" data-title="r5c0">1</td><td class="available off" data-title="r5c1">2</td><td class="available off" data-title="r5c2">3</td><td class="available off" data-title="r5c3">4</td><td class="available off" data-title="r5c4">5</td><td class="available off" data-title="r5c5">6</td><td class="available off" data-title="r5c6">7</td></tr></tbody></table></div></div><div class="calendar second left"><div class="calendar-date"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-arrow-left icon icon-arrow-left glyphicon glyphicon-arrow-left"></i></th><th colspan="5" class="month">Jan 2020</th><th class="next available"><i class="fa fa-arrow-right icon icon-arrow-right glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="available off" data-title="r0c0">29</td><td class="available off" data-title="r0c1">30</td><td class="available off" data-title="r0c2">31</td><td class="available" data-title="r0c3">1</td><td class="available" data-title="r0c4">2</td><td class="available" data-title="r0c5">3</td><td class="available" data-title="r0c6">4</td></tr><tr><td class="available" data-title="r1c0">5</td><td class="available" data-title="r1c1">6</td><td class="available" data-title="r1c2">7</td><td class="available" data-title="r1c3">8</td><td class="available" data-title="r1c4">9</td><td class="available" data-title="r1c5">10</td><td class="available" data-title="r1c6">11</td></tr><tr><td class="available" data-title="r2c0">12</td><td class="available" data-title="r2c1">13</td><td class="available" data-title="r2c2">14</td><td class="available" data-title="r2c3">15</td><td class="available" data-title="r2c4">16</td><td class="available" data-title="r2c5">17</td><td class="available" data-title="r2c6">18</td></tr><tr><td class="available" data-title="r3c0">19</td><td class="available" data-title="r3c1">20</td><td class="available" data-title="r3c2">21</td><td class="available" data-title="r3c3">22</td><td class="available" data-title="r3c4">23</td><td class="available" data-title="r3c5">24</td><td class="available active start-date" data-title="r3c6">25</td></tr><tr><td class="available in-range" data-title="r4c0">26</td><td class="available in-range" data-title="r4c1">27</td><td class="available in-range" data-title="r4c2">28</td><td class="available in-range" data-title="r4c3">29</td><td class="available in-range" data-title="r4c4">30</td><td class="available in-range" data-title="r4c5">31</td><td class="available off in-range" data-title="r4c6">1</td></tr><tr><td class="available off in-range" data-title="r5c0">2</td><td class="available off in-range" data-title="r5c1">3</td><td class="available off in-range" data-title="r5c2">4</td><td class="available off in-range" data-title="r5c3">5</td><td class="available off in-range" data-title="r5c4">6</td><td class="available off in-range" data-title="r5c5">7</td><td class="available off in-range" data-title="r5c6">8</td></tr></tbody></table></div></div><div class="ranges"><ul><li>Today</li><li>Yesterday</li><li>Last 7 Days</li><li class="active">Last 30 Days</li><li>This Month</li><li>Last Month</li><li>Custom Range</li></ul><div class="range_inputs"><div class="daterangepicker_start_input"><label for="daterangepicker_start">From</label><input class="input-mini" type="text" name="daterangepicker_start" value=""></div><div class="daterangepicker_end_input"><label for="daterangepicker_end">To</label><input class="input-mini" type="text" name="daterangepicker_end" value=""></div><button class="applyBtn btn btn-small btn-sm btn-success">Apply</button>&nbsp;<button class="cancelBtn btn btn-small btn-sm btn-default">Cancel</button></div></div></div><div class="jvectormap-label"></div></body></html>

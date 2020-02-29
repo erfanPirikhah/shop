@@ -48,7 +48,7 @@
                     {{ csrf_field() }}
                     <div class="btn btn-group btn-xs">
                      <a href="{{Route('product.edit',["id"=>$item->id])}}" class="btn btn-primary btn-sm">ویرایش</a>
-                      <button type="submit" class="btn btn-danger btn-sm" > حذف</button>
+                      <button type="submit" class="btn btn-danger btn-sm" onclick="archiveFunction()" > حذف</button>
                     </div>
 
                     

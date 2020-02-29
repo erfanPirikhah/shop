@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use SweetAlert;
 
 use App\Slider;
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class SliderController extends Controller
             'url'=>request('url'),
             'imageUrl'=>request('filepath')
         ]);
-        return back();
+        alert()->success('پیام', 'با موفقیت افزوده شد')->persistent("بستن ");
+        return redirect('admin/slider');
     }
 
     /**

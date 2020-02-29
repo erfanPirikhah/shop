@@ -17,7 +17,7 @@ Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\Lfm
 
 
 
-Route::group(['namespace'=>'Admin','prefix' => 'admin'], function () {
+Route::group(['namespace'=>'Admin','middleware'=>['auth','CheckAdmin'],'prefix' => 'admin'], function () {
     Route::get('/panel', function () {
         return view('Admin.layout.master');
     });

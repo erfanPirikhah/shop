@@ -30,7 +30,7 @@
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                         <div class="btn btn-group btn-xs">
-                          <button type="submit" class="btn btn-danger btn-sm" > حذف</button>
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="archiveFunction()" > حذف</button>
                         </div>
                           </form></td>
                 </tr>

@@ -34,7 +34,7 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href={{route("product.create")}} class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
+                   <i class="fas fa-mobile"></i>
                     <p>افزودن محصول </p>
                   </a>
                 </li>
@@ -105,8 +105,8 @@
 
 
             <li class="nav-item">
-              <a href="../widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
+              <a href="{{route("user.index")}}" class="nav-link">
+                <i class="nav-icon fa fa-user"></i>
                 <p>
                  کاربران
                   
@@ -116,7 +116,7 @@
 
             <li class="nav-item">
               <a href="../widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
+                <i class="nav-icon fa fa-user"></i>
                 <p>
                   ویجت&zwnj;ها
                   

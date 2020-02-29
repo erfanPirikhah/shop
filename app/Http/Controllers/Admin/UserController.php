@@ -88,7 +88,7 @@ class UserController extends Controller
             'image'=> $url,
            
         ]);
-        
+        alert()->success('پیام', 'با موفقیت آپدیت  شد')->persistent("بستن ");
         return redirect('admin/user' );
     }
 
@@ -100,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return back();
     }
 }

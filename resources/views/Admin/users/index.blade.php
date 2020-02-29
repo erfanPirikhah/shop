@@ -2,11 +2,12 @@
 
 @section('content')
 
+
 <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">محصولات</h3>
+          <h3 class="card-title">کاربران </h3>
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -36,7 +37,8 @@
                 <td><img src="{{$item->image}}" alt="{{$item->name}}" style="width:100px;height:90px"></td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->email}}</td>
-                <td>{{$item->level}}</td>
+                <td><span class="{{$item->level == 'admin' ? 'badge badge-success' : 'badge badge-danger'}}">{{$item->level}}</span></td>
+
                 <td>{{jdate($item->created_at)->format('%d/ %m/ %Y')}}</td>
               
               
@@ -45,7 +47,7 @@
                     {{ csrf_field() }}
                     <div class="btn btn-group btn-xs">
                      <a href="{{Route('user.edit',["id"=>$item->id])}}" class="btn btn-primary btn-sm">ویرایش</a>
-                      <button type="submit" class="btn btn-danger btn-sm" > حذف</button>
+                      <button type="submit" class="btn btn-danger btn-sm" onclick="archiveFunction()"> حذف</button>
                     </div>
 
                     
@@ -60,4 +62,9 @@
       <!-- /.card -->
     </div>
   </div>
+
+
+
+  
+
 @endsection
