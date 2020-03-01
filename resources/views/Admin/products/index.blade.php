@@ -35,7 +35,7 @@
            @foreach ($products as $item)
             <tr>
                 <td>{{$n++}}</td>
-                <td><img src="{{$item->imageUrl}}" alt="{{$item->name_en}}" style="width:100px;height:90px"></td>
+                <td><img src="{{$item->imageUrl}}" alt="{{$item->name_en}}" style="width:120px;height:110px"></td>
                 <td>{{$item->name_en}}</td>
                 <td>{{jdate($item->created_at)->format('%d/ %m/ %Y')}}</td>
                 <td><span class="{{$item->status == '' ? 'badge  badge-pill badge-success' : 'badge badge-pill badge-warning'}}">{{$item->status == '' ? 'موجود' : 'ناموجود'}}</span></td>

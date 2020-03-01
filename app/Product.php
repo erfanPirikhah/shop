@@ -32,8 +32,8 @@ class Product extends Model
      'code'
 ];
 
-    public function category()
+    public function cats()
     {
-        return $this->belongsToMany(Cat::class);
+        return $this->belongsTo(Cat::class);
     }
 }

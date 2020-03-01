@@ -23,7 +23,7 @@
           @foreach ($sliders as $item)
                 <tr>
                     <td>{{$n++}}</td>
-                    <td><img src="{{$item->imageUrl}}" alt="{{$item->title}}" style="width:150px;height:100px"></td>
+                    <td><img src="{{$item->imageUrl}}" alt="{{$item->title}}" style="width:350px;height:100px"></td>
                     <td>{{$item->title}}</td>
                     <td>{{$item->url}}</td>
                     <td>  <form action="{{Route('slider.destroy',["id"=>$item->id])}}"  method="post">
